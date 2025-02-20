@@ -11,7 +11,6 @@
             padding: 0;
             background-color: #f8f9fa;
             color: #333;
-            scroll-behavior: smooth; /* Desplazamiento suave */
         }
         .container {
             width: 60%;
@@ -46,11 +45,6 @@
             background: #a10000;
             padding: 10px;
             justify-content: center;
-            position: fixed; /* Hace que el menú se mantenga en la parte superior */
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
         }
         .menu a {
             text-decoration: none;
@@ -65,24 +59,11 @@
         }
         .content {
             line-height: 1.6;
-            padding: 80px 0; /* Espacio para que el contenido no quede oculto por el menú */
-        }
-        .section {
-            padding: 60px 0;
-            margin-top: 60px;
+            padding: 50px 0;
         }
         .contact {
             margin-top: 20px;
             font-size: 14px;
-        }
-        .icons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .icons img {
-            width: 24px;
-            height: 24px;
         }
         footer {
             margin-top: 20px;
@@ -95,16 +76,16 @@
 </head>
 <body>
 
-    <!-- 🔹 Barra de Navegación con Enlaces a Secciones -->
+    <!-- 🔹 Navigation Menu with Links to Separate Pages -->
     <nav class="menu">
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="contact.html">Contact</a>
     </nav>
 
     <div class="container">
-        <!-- 🔹 Sección de Presentación -->
+        <!-- 🔹 Main Content -->
         <div class="header">
             <img src="EdgarBruno.jpg" alt="Edgar Bruno Díaz Castro">
             <div>
@@ -113,38 +94,12 @@
             </div>
         </div>
 
-        <!-- 🔹 Sección About -->
-        <div id="about" class="section">
-            <h2>About</h2>
-            <p>I'm a Master's student in Social Policy at the University of Pennsylvania, a Fulbright Scholar, and a Social Justice Scholar. My research focuses on governance, social policy, transparency, and democratic institutions.</p>
-            <p>Previously, I completed my Bachelor’s degree in Law and Political Science at Tecnológico de Monterrey and worked as a consultant for international organizations such as the United Nations Population Fund, The Pacific Alliance, and the Organization of American States.</p>
-        </div>
-
-        <!-- 🔹 Sección Research -->
-        <div id="research" class="section">
-            <h2>Research</h2>
-            <p>My work explores social mobility, transparency, and governance in Latin America. I'm interested in how institutions can improve public policy design through open data and citizen participation.</p>
-        </div>
-
-        <!-- 🔹 Sección Publications -->
-        <div id="publications" class="section">
-            <h2>Publications</h2>
-            <p>I've published research on electoral transparency and access to public information. My latest work won first place in the TEPJF 2024 Essay Contest.</p>
-        </div>
-
-        <!-- 🔹 Sección Contact -->
-        <div id="contact" class="section contact">
-            <h2>Contact</h2>
-            <p>Email: <strong>edgarbruno.diaz [at] email.com</strong></p>
-            <div class="icons">
-                <a href="https://sp2.upenn.edu/person/edgar-bruno-diaz-castro/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg" alt="UPenn Profile"></a>
-                <a href="https://github.com/ebdiazc" target="_blank"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub"></a>
-                <a href="https://www.linkedin.com/in/edgar-bruno-d%C3%ADaz-castro-16579b132/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Linkedin.svg" alt="LinkedIn"></a>
-            </div>
+        <div class="content">
+            <p>Welcome to my personal website. Here, you will find my research, publications, and ways to contact me.</p>
         </div>
     </div>
 
-    <!-- Pie de Página -->
+    <!-- Footer -->
     <footer>
         © 2025 - Edgar Bruno Díaz Castro
     </footer>
