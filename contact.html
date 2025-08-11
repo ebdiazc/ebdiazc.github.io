@@ -1,33 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Edgar Bruno Díaz Castro</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto — Edgar Bruno Díaz Castro</title>
+  <meta name="description" content="Ponte en contacto con Edgar Bruno Díaz Castro para colaboraciones, consultoría y proyectos en política social y datos." />
+  <meta name="theme-color" content="#a10000" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --brand:#a10000; --brand-600:#8a0000; --bg:#f8f9fa; --fg:#222; --muted:#6b7280; --card:#fff; --ring:rgba(161,0,0,.15); --maxw:1100px; --radius:16px; }
+    @media (prefers-color-scheme: dark){ :root{ --bg:#0f1115; --fg:#e5e7eb; --muted:#9ca3af; --card:#151821; } }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 600px at 10% -10%, rgba(161,0,0,.08), transparent 60%),var(--bg);color:var(--fg);line-height:1.6}
+    .container{width:min(92%,var(--maxw));margin:0 auto}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(10px);background:color-mix(in oklab, var(--bg) 80%, transparent);border-bottom:1px solid rgba(100,100,100,.12)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
+    .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 6px var(--ring)}
+    .brand strong{font-weight:800;letter-spacing:.2px}
+    nav ul{list-style:none;display:flex;gap:10px;margin:0;padding:0}
+    nav a{text-decoration:none;color:var(--fg);font-weight:600;font-size:.95rem;padding:8px 12px;border-radius:10px;transition:transform .15s ease, background-color .15s ease}
+    nav a:hover{background:var(--card);transform:translateY(-1px)}
+    nav a.active{color:#fff;background:var(--brand)}
+    main{padding:36px 0}
+    h1{margin:0 0 8px}
+    .lead{color:var(--muted)}
+    .card{background:var(--card);border:1px solid rgba(100,100,100,.12);border-radius:var(--radius);padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .col-6{grid-column:span 6}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(0,0,0,.08);text-decoration:none;font-weight:700}
+    .btn.primary{background:var(--brand);color:#fff;border-color:var(--brand-600);box-shadow:0 10px 30px rgba(161,0,0,.25)}
+    .links{display:flex;gap:10px;flex-wrap:wrap}
+    .item{display:flex;align-items:center;gap:10px}
+    .item strong{font-weight:800}
+    form{display:grid;gap:12px}
+    input, textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(100,100,100,.2);background:var(--card);color:var(--fg)}
+    input:focus, textarea:focus{outline:2px solid var(--ring)}
+    footer{margin-top:40px;padding:22px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(100,100,100,.12)}
+    @media (max-width:900px){ .col-6{grid-column:span 12} }
+  </style>
 </head>
 <body>
-
-    <nav class="menu">
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="container">
-        <h1>Contact</h1>
-        <p>Email: <strong>edgarbruno.diaz [at] email.com</strong></p>
-        <p>Follow me on:</p>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Principal">
+      <a class="brand" href="index.html" aria-label="Inicio"><span class="dot" aria-hidden="true"></span><strong>Edgar Bruno Díaz Castro</strong></a>
+      <nav>
         <ul>
-            <li><a href="https://github.com/ebdiazc" target="_blank">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/edgar-bruno-d%C3%ADaz-castro-16579b132/" target="_blank">LinkedIn</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a class="active" href="contact.html">Contact</a></li>
         </ul>
+      </nav>
     </div>
+  </header>
 
-    <footer>
-        © 2025 - Edgar Bruno Díaz Castro
-    </footer>
+  <main class="container">
+    <h1>Contacto</h1>
+    <p class="lead">¿Buscas colaborar, invitarme a un proyecto o necesitas apoyo en evaluación y análisis de datos? Hablemos.</p>
 
+    <div class="grid" style="margin-top:18px">
+      <!-- Datos directos -->
+      <section class="card col-6" aria-labelledby="datos-title">
+        <h2 id="datos-title" style="margin-top:0">Datos de contacto</h2>
+        <div class="item"><strong>Email:</strong> <a href="mailto:erdg97@gmail.com">erdg97@gmail.com</a></div>
+        <div class="item"><strong>GitHub:</strong> <a href="https://github.com/ebdiazc" target="_blank" rel="noopener">@ebdiazc</a></div>
+        <div class="item"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/edgar-bruno-d%C3%ADaz-castro-16579b132/" target="_blank" rel="noopener">Perfil</a></div>
+        <div class="links" style="margin-top:12px">
+          <a class="btn primary" href="mailto:erdg97@gmail.com?subject=Contacto%20desde%20tu%20sitio">Escríbeme</a>
+          <a class="btn" href="Edgar_Bruno_Diaz_Castro_CV.pdf" download>Descargar CV</a>
+        </div>
+      </section>
+
+      <!-- Formulario simple (mailto) -->
+      <section class="card col-6" aria-labelledby="form-title">
+        <h2 id="form-title" style="margin-top:0">Envíame un mensaje</h2>
+        <form action="mailto:erdg97@gmail.com" method="post" enctype="text/plain">
+          <label>
+            Nombre
+            <input name="nombre" type="text" placeholder="Tu nombre" required />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" placeholder="tucorreo@ejemplo.com" required />
+          </label>
+          <label>
+            Mensaje
+            <textarea name="mensaje" rows="5" placeholder="Cuéntame brevemente sobre tu proyecto" required></textarea>
+          </label>
+          <button class="btn primary" type="submit">Enviar</button>
+        </form>
+        <p class="lead" style="font-size:.9rem;margin-top:10px">Al enviar, se abrirá tu cliente de correo con el contenido del mensaje.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> — Edgar Bruno Díaz Castro.</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
