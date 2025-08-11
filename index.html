@@ -1,108 +1,264 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edgar Bruno Díaz Castro</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        .container {
-            width: 60%;
-            margin: auto;
-            padding: 20px;
-        }
-        .header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 20px 0;
-        }
-        .header img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        h1 {
-            margin: 0;
-            font-size: 26px;
-            color: #a10000;
-        }
-        .subtitle {
-            color: #a10000;
-            font-weight: bold;
-        }
-        .menu {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            background: #a10000;
-            padding: 10px;
-            justify-content: center;
-        }
-        .menu a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            padding: 8px 12px;
-        }
-        .menu a:hover {
-            background: white;
-            color: #a10000;
-            border-radius: 5px;
-        }
-        .content {
-            line-height: 1.6;
-            padding: 50px 0;
-        }
-        .contact {
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        footer {
-            margin-top: 20px;
-            padding: 10px;
-            text-align: center;
-            background-color: #343a40;
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edgar Bruno Díaz Castro — Social Policy & Data</title>
+  <meta name="description" content="Portafolio de Edgar Bruno Díaz Castro: política social, evaluación de programas y ciencia de datos aplicados." />
+  <meta name="author" content="Edgar Bruno Díaz Castro" />
+  <meta name="theme-color" content="#a10000" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Edgar Bruno Díaz Castro — Social Policy & Data" />
+  <meta property="og:description" content="Evaluación de políticas públicas, investigación aplicada y visualización de datos." />
+  <meta property="og:image" content="EdgarBruno.jpg" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fuente: Inter -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #a10000;
+      --brand-600: #8a0000;
+      --bg: #f8f9fa;
+      --fg: #222;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --ring: rgba(161, 0, 0, 0.15);
+      --maxw: 1100px;
+      --radius: 16px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0f1115; --fg: #e5e7eb; --muted: #9ca3af; --card: #151821; }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(161,0,0,0.08), transparent 60%), var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    .container { width: min(92%, var(--maxw)); margin: 0 auto; }
+
+    .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { left: 12px; top: 12px; width: auto; height: auto; background: var(--card); padding: 8px 12px; border-radius: 8px; box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+
+    header { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(180%) blur(10px); background: color-mix(in oklab, var(--bg) 80%, transparent); border-bottom: 1px solid rgba(100,100,100,.12); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--fg); }
+    .brand .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 0 6px var(--ring); }
+    .brand strong { font-weight: 800; letter-spacing: .2px; }
+
+    nav ul { list-style: none; display: flex; gap: 10px; margin: 0; padding: 0; }
+    nav a { text-decoration: none; color: var(--fg); font-weight: 600; font-size: 0.95rem; padding: 8px 12px; border-radius: 10px; transition: transform .15s ease, background-color .15s ease; }
+    nav a:hover { background: var(--card); transform: translateY(-1px); }
+    nav a.active { color: white; background: var(--brand); }
+
+    .hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; padding: 40px 0 28px; align-items: center; }
+    .hero h1 { margin: 0 0 10px; font-size: clamp(26px, 3.6vw, 40px); line-height: 1.15; letter-spacing: -.3px; }
+    .subtitle { color: var(--brand); font-weight: 800; text-transform: uppercase; letter-spacing: .8px; font-size: .9rem; }
+    .lead { color: var(--muted); margin-top: 10px; font-size: 1.05rem; }
+    .actions { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(0,0,0,.08); text-decoration: none; font-weight: 700; }
+    .btn.primary { background: var(--brand); color: #fff; border-color: var(--brand-600); box-shadow: 0 10px 30px rgba(161,0,0,.25); }
+    .btn:hover { transform: translateY(-1px); }
+
+    .avatar { width: min(240px, 70%); aspect-ratio: 1/1; border-radius: 24px; object-fit: cover; box-shadow: 0 24px 60px rgba(0,0,0,.18), 0 0 0 10px var(--ring); justify-self: center; }
+
+    section { padding: 40px 0; }
+    .section-title { font-size: 1.4rem; margin: 0 0 16px; }
+
+    .cards { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card { grid-column: span 6; background: var(--card); border: 1px solid rgba(100,100,100,.12); border-radius: var(--radius); padding: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.06); }
+    .card h3 { margin-top: 0; margin-bottom: 8px; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .98rem; }
+    .card a { display: inline-block; margin-top: 10px; font-weight: 700; color: var(--brand); text-decoration: none; }
+
+    .pub-list { margin: 0; padding: 0; list-style: none; }
+    .pub-list li { padding: 12px 0; border-bottom: 1px dashed rgba(100,100,100,.2); }
+    .pub-list li:last-child { border-bottom: none; }
+    .kicker { font-size: .8rem; color: var(--muted); text-transform: uppercase; letter-spacing: .5px; }
+
+    footer { margin-top: 40px; padding: 22px 0; text-align: center; color: var(--muted); border-top: 1px solid rgba(100,100,100,.12); }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .actions { justify-content: center; }
+      .cards .card { grid-column: span 12; }
+    }
+  </style>
 </head>
+
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-    <!-- 🔹 Navigation Menu with Links to Separate Pages -->
-    <nav class="menu">
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="container">
-        <!-- 🔹 Main Content -->
-        <div class="header">
-            <img src="EdgarBruno.jpg" alt="Edgar Bruno Díaz Castro">
-            <div>
-                <h1>Edgar Bruno Díaz Castro</h1>
-                <p class="subtitle">Master's Student in Social Policy at UPenn</p>
-            </div>
-        </div>
-
-        <div class="content">
-            <p>Welcome to my personal website. Here, you will find my research, publications, and ways to contact me.</p>
-        </div>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Principal">
+      <a class="brand" href="index.html" aria-label="Inicio">
+        <span class="dot" aria-hidden="true"></span>
+        <strong>Edgar Bruno Díaz Castro</strong>
+      </a>
+      <nav>
+        <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Footer -->
-    <footer>
-        © 2025 - Edgar Bruno Díaz Castro
-    </footer>
+  <main id="contenido" class="container" tabindex="-1">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="intro-title">
+      <div>
+        <p class="subtitle">Política Social • Evaluación • Datos</p>
+        <h1 id="intro-title">Edgar Bruno Díaz Castro</h1>
+        <p class="lead">Científico de datos sociales y analista de políticas públicas. <strong>Master of Science in Social Policy</strong> por la <strong>University of Pennsylvania (SP2, 2025)</strong>. Distinciones: <em>Social Justice Scholar</em> y <em>Wilson Spigner Award for Social Policy Excellence</em>. Experiencia en evaluación de programas, diseño de estrategias y análisis cuantitativo/cualitativo para sector público, organismos internacionales y fundaciones.</p>
+        <div class="actions">
+          <a class="btn primary" href="research.html">Ver proyectos</a>
+          <a class="btn" href="mailto:erdg97@gmail.com" aria-label="Enviar correo">Contactar</a>
+          <a class="btn" href="Edgar_Bruno_Diaz_Castro_CV.pdf" download>Descargar CV</a>
+        </div>
+      </div>
+      <img class="avatar" src="EdgarBruno.jpg" alt="Foto de perfil de Edgar Bruno Díaz Castro" />
+    </section>
 
+    <!-- RESUMEN DE EXPERIENCIA -->
+    <section aria-labelledby="exp-title">
+      <h2 id="exp-title" class="section-title">Resumen profesional</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Coordinación de proyectos • Consultoría</h3>
+          <p>Más de 3 años coordinando y ejecutando proyectos en <strong>GC Genera</strong> (2021–2024), con trabajo para OEA/Trust for the Americas, Fundación Televisa (estudio cuantitativo "Cuantrix"), Alianza del Pacífico (estrategia de comunicación sobre plásticos) y ONU-Población Hidalgo, entre otros.</p>
+        </article>
+        <article class="card">
+          <h3>Sector público</h3>
+          <p>Coordinador especializado en el <strong>Instituto Municipal de Planeación, Puebla</strong> (2021–2024), y funciones directivas/analíticas en Secretaría de Administración y <strong>Instituto de la Juventud</strong> (2018–2021), liderando programas de prevención y emprendimiento juvenil con alcance a 35,000 personas.</p>
+        </article>
+        <article class="card">
+          <h3>Investigación aplicada</h3>
+          <p>Evaluaciones cualitativas y cuantitativas, monitoreo y análisis de políticas educativas y sociales; asistencia de investigación en el <strong>Tecnológico de Monterrey</strong>. Publicaciones y ensayos premiados en transparencia, justicia abierta y política social.</p>
+        </article>
+        <article class="card">
+          <h3>Competencias técnicas</h3>
+          <p><strong>R</strong> para análisis de datos; <strong>ArcGIS Pro</strong> para análisis espacial y mapas; redacción técnica y comunicación estratégica; inglés avanzado y español nativo.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROYECTOS DESTACADOS -->
+    <section aria-labelledby="proyectos-title">
+      <h2 id="proyectos-title" class="section-title">Proyectos destacados</h2>
+      <div class="cards">
+        <article class="card" aria-labelledby="p1-title">
+          <h3 id="p1-title">Evaluación cualitativa del programa CIMA — OEA/Trust for the Americas</h3>
+          <p>Entrevistas y grupos focales para medir el impacto del entrenamiento en el crecimiento personal y profesional de mujeres beneficiarias; informe con hallazgos y recomendaciones.</p>
+        </article>
+        <article class="card" aria-labelledby="p2-title">
+          <h3 id="p2-title">Estudio cuantitativo "Cuantrix" — Fundación Televisa</h3>
+          <p>Diseño e implementación de medición de habilidades de programación en estudiantes de cinco estados; análisis de efectividad en alfabetización digital y pensamiento computacional.</p>
+        </article>
+        <article class="card" aria-labelledby="p3-title">
+          <h3 id="p3-title">Estrategia regional sobre consumo responsable de plásticos — Alianza del Pacífico</h3>
+          <p>Coordinación multinivel (gobierno, industria, sociedad civil) y desarrollo de materiales diferenciados por país para maximizar impacto y participación.</p>
+        </article>
+        <article class="card" aria-labelledby="p4-title">
+          <h3 id="p4-title">Planificación y documentos clave — Gobierno de Puebla</h3>
+          <p>Soporte a elaboración del Plan de Desarrollo, informes de gobierno y diagnósticos, asegurando calidad técnica y toma de decisiones informada.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- RECONOCIMIENTOS -->
+    <section aria-labelledby="awards-title">
+      <h2 id="awards-title" class="section-title">Becas, premios y distinciones</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Académicos recientes</h3>
+          <p>Don Lavoie Research Fellowship (Mercatus Center, 2024); Beca M.O.B. (2024); Fulbright García Robles (2023); Opportunity Funds (2023); Social Justice Scholar (UPenn); Wilson Spigner Award (UPenn).</p>
+        </article>
+        <article class="card">
+          <h3>Juventud y liderazgo</h3>
+          <p>Premio Nacional de la Juventud (2013) y Premio Estatal de la Juventud (2012). Finalista nacional de deliberación pública (2020) y múltiples campeonatos de debate político juvenil.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PUBLICACIONES / ESCRITOS -->
+    <section aria-labelledby="pubs-title">
+      <h2 id="pubs-title" class="section-title">Publicaciones y escritos</h2>
+      <ul class="pub-list">
+        <li>
+          <div class="kicker">2024 · Ensayo (1º lugar)</div>
+          <strong>Hacia una transparencia más democrática y proactiva</strong> — Tribunal Electoral del Poder Judicial de la Federación. <a href="https://www.te.gob.mx/transparencia/media/files/documentos/primero.docx" target="_blank" rel="noopener">Enlace</a>
+        </li>
+        <li>
+          <div class="kicker">2023 · Ensayo (2º lugar)</div>
+          <strong>La disputa democrática: la relevancia de los árbitros</strong> — TEPJF. <a href="https://www.te.gob.mx/transparencia/media/pdf/Edgar_Bruno_Diaz_Castro.pdf" target="_blank" rel="noopener">PDF</a>
+        </li>
+        <li>
+          <div class="kicker">2023 · Capítulo</div>
+          <strong>Política social y clientelismo</strong> — IEEPCNL, <em>Voces Sustantivas</em>, pp.41–67. <a href="https://www.ieepcnl.mx/data/info/publicaciones/2023/CEP_XXIV.pdf" target="_blank" rel="noopener">PDF</a>
+        </li>
+        <li>
+          <div class="kicker">2022 · Ensayo</div>
+          <strong>Ni tan abiertos ni con tantos datos</strong> — TEPJF. <a href="https://www.te.gob.mx/editorial/pdf/2324" target="_blank" rel="noopener">PDF</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CONTACTO -->
+    <section aria-labelledby="contact-title">
+      <h2 id="contact-title" class="section-title">Contacto</h2>
+      <p>¿Interesado en colaboración, consultoría o charlas? Escríbeme:</p>
+      <p>
+        <a class="btn primary" href="mailto:erdg97@gmail.com">erdg97@gmail.com</a>
+        <a class="btn" href="https://github.com/tuusuario" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/tuusuario" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> — Edgar Bruno Díaz Castro. Todos los derechos reservados.</small>
+  </footer>
+
+  <!-- Datos estructurados: Person -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Edgar Bruno Díaz Castro",
+      "jobTitle": "Social Data Scientist / Policy Analyst",
+      "alumniOf": {"@type": "CollegeOrUniversity", "name": "University of Pennsylvania"},
+      "image": "EdgarBruno.jpg",
+      "email": "mailto:erdg97@gmail.com",
+      "url": "https://tuusuario.github.io/",
+      "knowsAbout": ["evaluación de políticas públicas", "análisis de datos", "ArcGIS", "R"],
+      "sameAs": [
+        "https://github.com/tuusuario",
+        "https://www.linkedin.com/in/tuusuario"
+      ]
+    }
+  </script>
+
+  <script>
+    // Año automático en el footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
