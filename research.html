@@ -1,28 +1,173 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research - Edgar Bruno Díaz Castro</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research — Edgar Bruno Díaz Castro</title>
+  <meta name="description" content="Proyectos, ensayos, policy notes y materiales de investigación de Edgar Bruno Díaz Castro." />
+  <meta name="theme-color" content="#a10000" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --brand:#a10000; --brand-600:#8a0000; --bg:#f8f9fa; --fg:#222; --muted:#6b7280; --card:#fff; --ring:rgba(161,0,0,.15); --maxw:1100px; --radius:16px; }
+    @media (prefers-color-scheme: dark){ :root{ --bg:#0f1115; --fg:#e5e7eb; --muted:#9ca3af; --card:#151821; } }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(1200px 600px at 10% -10%, rgba(161,0,0,.08), transparent 60%),var(--bg);color:var(--fg);line-height:1.6}
+    .container{width:min(92%,var(--maxw));margin:0 auto}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(10px);background:color-mix(in oklab, var(--bg) 80%, transparent);border-bottom:1px solid rgba(100,100,100,.12)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--fg)}
+    .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 6px var(--ring)}
+    .brand strong{font-weight:800;letter-spacing:.2px}
+    nav ul{list-style:none;display:flex;gap:10px;margin:0;padding:0}
+    nav a{text-decoration:none;color:var(--fg);font-weight:600;font-size:.95rem;padding:8px 12px;border-radius:10px;transition:transform .15s ease, background-color .15s ease}
+    nav a:hover{background:var(--card);transform:translateY(-1px)}
+    nav a.active{color:#fff;background:var(--brand)}
+    main{padding:36px 0}
+    h1{margin:0 0 8px}
+    .lead{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{background:var(--card);border:1px solid rgba(100,100,100,.12);border-radius:var(--radius);padding:20px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+    .col-4{grid-column:span 4}
+    .col-6{grid-column:span 6}
+    .col-8{grid-column:span 8}
+    .col-12{grid-column:span 12}
+    .kicker{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+    .list{margin:0;padding:0;list-style:none}
+    .list li{padding:12px 0;border-bottom:1px dashed rgba(100,100,100,.2)}
+    .list li:last-child{border-bottom:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid rgba(0,0,0,.08);text-decoration:none;font-weight:700}
+    .btn.primary{background:var(--brand);color:#fff;border-color:var(--brand-600);box-shadow:0 10px 30px rgba(161,0,0,.25)}
+    .tag{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid rgba(100,100,100,.2);font-size:.8rem;color:var(--muted)}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+    footer{margin-top:40px;padding:22px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(100,100,100,.12)}
+    @media (max-width:900px){ .col-4,.col-6,.col-8,.col-12{grid-column:span 12} }
+  </style>
 </head>
 <body>
-
-    <nav class="menu">
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="container">
-        <h1>Research</h1>
-        <p>My research focuses on governance, social policy, transparency, and democratic institutions.</p>
+  <header>
+    <div class="container nav" role="navigation" aria-label="Principal">
+      <a class="brand" href="index.html" aria-label="Inicio"><span class="dot" aria-hidden="true"></span><strong>Edgar Bruno Díaz Castro</strong></a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <footer>
-        © 2025 - Edgar Bruno Díaz Castro
-    </footer>
+  <main class="container">
+    <h1>Research</h1>
+    <p class="lead">Líneas: política social y educación, evaluación de programas, transparencia y justicia abierta, adopción digital y desigualdad territorial. Aquí concentro proyectos, ensayos y materiales con código/datos cuando es posible.</p>
 
+    <!-- ÁREAS Y MÉTODOS -->
+    <section class="grid" style="margin-top:18px">
+      <article class="card col-6">
+        <h2 style="margin-top:0">Áreas de interés</h2>
+        <div class="row">
+          <span class="tag">Política social</span>
+          <span class="tag">Educación</span>
+          <span class="tag">Transparencia</span>
+          <span class="tag">Justicia abierta</span>
+          <span class="tag">Brecha digital</span>
+          <span class="tag">Desigualdad territorial</span>
+        </div>
+      </article>
+      <article class="card col-6">
+        <h2 style="margin-top:0">Métodos y herramientas</h2>
+        <div class="row">
+          <span class="tag">Evaluación cualitativa</span>
+          <span class="tag">Cuantitativo (R)</span>
+          <span class="tag">ArcGIS Pro</span>
+          <span class="tag">Entrevistas y focus groups</span>
+          <span class="tag">Diseño de encuestas</span>
+          <span class="tag">Redacción técnica</span>
+        </div>
+      </article>
+    </section>
+
+    <!-- PROYECTOS DESTACADOS -->
+    <section class="grid" style="margin-top:10px">
+      <article class="card col-6">
+        <div class="kicker">Evaluación cualitativa</div>
+        <h3 style="margin:.2rem 0 0">CIMA — OEA / Trust for the Americas (2023)</h3>
+        <p>Entrevistas y grupos focales para evaluar resultados en crecimiento personal y profesional de mujeres participantes. Informe con hallazgos y recomendaciones accionables.</p>
+      </article>
+      <article class="card col-6">
+        <div class="kicker">Estudio cuantitativo</div>
+        <h3 style="margin:.2rem 0 0">Cuantrix — Fundación Televisa (2023)</h3>
+        <p>Diseño e implementación de medición de habilidades de programación en 5 estados de México. Evaluación de alfabetización digital y pensamiento computacional.</p>
+      </article>
+      <article class="card col-6">
+        <div class="kicker">Estrategia pública</div>
+        <h3 style="margin:.2rem 0 0">Consumo responsable de plásticos — Alianza del Pacífico (2022–2023)</h3>
+        <p>Coordinación con gobierno, industria y sociedad civil; materiales diferenciados por país para maximizar impacto.</p>
+      </article>
+      <article class="card col-6">
+        <div class="kicker">Gestión pública</div>
+        <h3 style="margin:.2rem 0 0">Planeación y documentos clave — Gobierno de Puebla (2021–2024)</h3>
+        <p>Apoyo técnico para Plan de Desarrollo, informes de gobierno y diagnósticos; toma de decisiones basada en evidencia.</p>
+      </article>
+    </section>
+
+    <!-- ENSAYOS, POLICY NOTES Y PUBLICACIONES RELACIONADAS -->
+    <section class="card col-12" style="margin-top:16px">
+      <h2 style="margin-top:0">Ensayos y policy notes (selección)</h2>
+      <ul class="list">
+        <li>
+          <div class="kicker">2024 · 1º lugar</div>
+          <strong>Towards a more democratic and proactive transparency</strong> — TEPJF. Buenas prácticas y recomendaciones.
+          <div><a class="btn" href="https://www.te.gob.mx/transparencia/media/files/documentos/primero.docx" target="_blank" rel="noopener">Ver documento</a></div>
+        </li>
+        <li>
+          <div class="kicker">2023 · 2º lugar</div>
+          <strong>The democratic dispute: the importance of referees</strong> — TEPJF. Relevancia de árbitros electorales.
+          <div><a class="btn" href="https://www.te.gob.mx/transparencia/media/pdf/Edgar_Bruno_Diaz_Castro.pdf" target="_blank" rel="noopener">Ver PDF</a></div>
+        </li>
+        <li>
+          <div class="kicker">2023 · Capítulo</div>
+          <strong>Política social y clientelismo</strong> — IEEPCNL, <em>Voces Sustantivas</em>, pp. 41–67.
+          <div><a class="btn" href="https://www.ieepcnl.mx/data/info/publicaciones/2023/CEP_XXIV.pdf" target="_blank" rel="noopener">Ver PDF</a></div>
+        </li>
+        <li>
+          <div class="kicker">2022 · Ensayo</div>
+          <strong>Ni tan abiertos ni con tantos datos</strong> — TEPJF. Análisis crítico de plataformas de datos.
+          <div><a class="btn" href="https://www.te.gob.mx/editorial/pdf/2324" target="_blank" rel="noopener">Ver PDF</a></div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- DATOS, CÓDIGO Y DASHBOARDS -->
+    <section class="grid" style="margin-top:16px">
+      <article class="card col-8">
+        <h2 style="margin-top:0">Datos y código</h2>
+        <p>Repositorios y materiales reproducibles (limpieza, análisis y visualización). En construcción.</p>
+        <ul class="list">
+          <li><strong>Adopción de banda ancha (EE. UU.)</strong> — Integración ACS/IPUMS, FCC y Geocorr. <em>Repo y metodología</em> (próximamente).</li>
+          <li><strong>Mapas de desigualdad digital</strong> — ArcGIS/Leaflet; filtros y comparativas temporales (próximamente).</li>
+        </ul>
+        <div class="row">
+          <a class="btn primary" href="https://github.com/ebdiazc" target="_blank" rel="noopener">Ver GitHub</a>
+          <a class="btn" href="contact.html">Proponer colaboración</a>
+        </div>
+      </article>
+      <aside class="card col-4">
+        <h2 style="margin-top:0">Docencia y charlas</h2>
+        <p>Talleres/charlas sobre evaluación, datos abiertos y mapas aplicados a política pública. Disponible para contacto.</p>
+        <a class="btn" href="mailto:erdg97@gmail.com?subject=Invitación%20a%20charla">Invitar</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> — Edgar Bruno Díaz Castro.</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
